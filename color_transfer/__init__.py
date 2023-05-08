@@ -48,30 +48,20 @@ def color_transfer(source, target, clip=True, preserve_paper=True):
 	# subtract the means from the target image
 	(l, a, b) = cv2.split(target)
 	l -= lMeanTar
-	a -= aMeanTar
-	b -= bMeanTar
 
 	if preserve_paper:
 		# scale by the standard deviations using paper proposed factor
 		l = (lStdTar / lStdSrc) * l
-		a = (aStdTar / aStdSrc) * a
-		b = (bStdTar / bStdSrc) * b
 	else:
 		# scale by the standard deviations using reciprocal of paper proposed factor
 		l = (lStdSrc / lStdTar) * l
-		a = (aStdSrc / aStdTar) * a
-		b = (bStdSrc / bStdTar) * b
 
 	# add in the source mean
 	l += lMeanSrc
-	a += aMeanSrc
-	b += bMeanSrc
 
 	# clip/scale the pixel intensities to [0, 255] if they fall
 	# outside this range
 	l = _scale_array(l, clip=clip)
-	a = _scale_array(a, clip=clip)
-	b = _scale_array(b, clip=clip)
 
 	# merge the channels together and convert back to the RGB color
 	# space, being sure to utilize the 8-bit unsigned integer data
