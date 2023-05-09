@@ -7,8 +7,8 @@ setup(
 	description = 'Implements color transfer between two images using the Lab color space, similar to the Reinhard et al. paper, "Color Transfer between Images"',
 	author = 'Adrian Rosebrock',
 	author_email = 'adrian@pyimagesearch.com',
-	url = 'https://github.com/jrosebr1/color_transfer',
-	download_url = 'https://github.com/jrosebr1/color_transfer/tarball/0.1',
+	url = 'https://github.com/Pavani-Panakanti/color_transfer',
+	download_url = 'https://github.com/Pavani-Panakanti/color_transfer/tarball/0.1',
 	keywords = ['computer vision', 'image processing', 'color', 'rgb', 'lab'],
 	classifiers = [],
 )
